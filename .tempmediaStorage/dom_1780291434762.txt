@@ -1,0 +1,27 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (223,42)<a class='flex items-center gap-2 group' href='#' />
+	[1] (189,42)<div >E />
+	[2] (235,42)<span >EARTHFIRM />
+		[3] (235,54)<span >Sports Infra />
+[4] (375,42)<a class='hover:text-brandGreen transition-colors' href='#home'>Home />
+[5] (428,42)<a class='hover:text-brandGreen transition-colors' href='#sports'>Sports We Cover />
+[6] (498,42)<a class='hover:text-brandGreen transition-colors' href='#customizer'>Court Visualizer />
+[7] (567,42)<a class='hover:text-brandGreen transition-colors' href='#estimator'>Quote Estimator />
+[8] (627,42)<a class='hover:text-brandGreen transition-colors' href='#portfolio'>Our Work />
+[9] (780,42)<a class='px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40' href='#estimator'>Get Free Estimate />
+Crafting
+Elite Performance
+Spaces
+Explore photographs of active arenas designed and built by Earthfirm Sports Infra.
+Indoor Flooring Project
+Canadian Maple Court Setup
+Standard FIBA-certified wooden court with specialized shock-absorption underlay installed for sports club arenas.
+Outdoor Turf Facility
+FIFA-Grade Multi-layered Turf Field
+Synthetic football field built using top-tier non-abrasive turf fibers, structural sub-base layers, and automated drainage solutions.
+Construction Precision Slider
+
+</current_dom>

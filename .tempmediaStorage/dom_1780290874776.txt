@@ -1,0 +1,45 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (223,42)<a class='flex items-center gap-2 group' href='#' />
+	[1] (189,42)<div >E />
+	[2] (235,42)<span >EARTHFIRM />
+		[3] (235,54)<span >Sports Infra />
+[4] (375,42)<a class='hover:text-brandGreen transition-colors' href='#home'>Home />
+[5] (428,42)<a class='hover:text-brandGreen transition-colors' href='#sports'>Sports We Cover />
+[6] (498,42)<a class='hover:text-brandGreen transition-colors' href='#customizer'>Court Visualizer />
+[7] (567,42)<a class='hover:text-brandGreen transition-colors' href='#estimator'>Quote Estimator />
+[8] (627,42)<a class='hover:text-brandGreen transition-colors' href='#portfolio'>Our Work />
+[9] (780,42)<a class='px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40' href='#estimator'>Get Free Estimate />
+Project Cost
+Estimator
+Get a dynamic structural analysis and rough project cost estimation in under a minute.
+2
+Court Dimensions & Sub-base
+[10] (500,531)<label class='text-xs uppercase tracking-wider text-slate-400 font-bold block'>Size Category />
+[11] (396,598)<label class='p-4 rounded-xl border border-brandGreen bg-slate-900/60 flex items-center gap-3 cursor-pointer select-none' />
+	[12] (309,598)<input class='w-4 h-4 text-brandGreen accent-brandGreen' />
+	[13] (354,598)<div  />
+		[14] (354,585)<span >Standard Size />
+		[15] (354,610)<span >Official tournament sizes />
+[16] (604,598)<label class='p-4 rounded-xl border border-white/10 hover:border-brandGreen bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none' />
+	[17] (517,598)<input class='w-4 h-4 text-brandGreen accent-brandGreen' />
+	[18] (565,598)<div  />
+		[19] (565,585)<span >Premium / Large Size />
+		[20] (565,610)<span >Custom grids or extensions />
+[21] (500,673)<label class='text-xs uppercase tracking-wider text-slate-400 font-bold block'>Sub-Base Construction />
+[22] (396,740)<label class='p-4 rounded-xl border border-brandGreen bg-slate-900/60 flex items-center gap-3 cursor-pointer select-none' />
+	[23] (309,740)<input class='w-4 h-4 text-brandGreen accent-brandGreen' />
+	[24] (376,740)<div  />
+		[25] (376,727)<span >Existing Concrete / Asphalt Base />
+		[26] (376,752)<span >Surface overlay painting/installation only />
+[27] (604,740)<label class='p-4 rounded-xl border border-white/10 hover:border-brandGreen bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none' />
+	[28] (517,740)<input class='w-4 h-4 text-brandGreen accent-brandGreen' />
+	[29] (592,740)<div  />
+		[30] (592,727)<span >Full Excavation & Civil Work />
+		[31] (592,752)<span >Earth excavation, stone-laying, sub-base build />
+[32] (323,848)<button class='px-6 py-3 rounded-xl border border-white/10 hover:bg-slate-900 text-white font-bold text-sm flex items-center gap-1.5'>Back />
+[33] (669,848)<button class='px-6 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5'>Next Step />
+
+</current_dom>

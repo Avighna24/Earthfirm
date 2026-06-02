@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earthfirm Sports Infra | Next-Gen Sports Infrastructure</title>
+  <!-- Google Fonts: Outfit for clean, modern athletic look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brandDark: '#090d16',
+            brandCard: '#121826',
+            brandGreen: '#3dfc1e',
+            brandCyan: '#00f3ff',
+            brandBlue: '#0066ff',
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom styles for high-end micro-interactions and neon glows */
+    .glow-hover:hover {
+      box-shadow: 0 0 25px rgba(61, 252, 30, 0.25);
+      border-color: #3dfc1e;
+    }
+    .glow-cyan-hover:hover {
+      box-shadow: 0 0 25px rgba(0, 243, 255, 0.25);
+      border-color: #00f3ff;
+    }
+    .text-glow {
+      text-shadow: 0 0 10px rgba(61, 252, 30, 0.5);
+    }
+    .text-cyan-glow {
+      text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    }
+    .glass-nav {
+      background: rgba(9, 13, 22, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glass-card {
+      background: rgba(18, 24, 38, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    /* Court SVG smooth transitions */
+    .court-bg {
+      transition: fill 0.4s ease;
+    }
+    .court-line {
+      transition: stroke 0.4s ease;
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-slate-100 font-sans selection:bg-brandGreen selection:text-black overflow-x-hidden">
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brandGreen to-brandCyan flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-brandGreen/20">
+          E
+        </div>
+        <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+          EARTHFIRM <span class="text-brandGreen text-glow font-medium text-sm tracking-widest block -mt-1.5 uppercase">Sports Infra</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#home" class="hover:text-brandGreen transition-colors">Home</a>
+        <a href="#sports" class="hover:text-brandGreen transition-colors">Sports We Cover</a>
+        <a href="#customizer" class="hover:text-brandGreen transition-colors">Court Visualizer</a>
+        <a href="#estimator" class="hover:text-brandGreen transition-colors">Quote Estimator</a>
+        <a href="#portfolio" class="hover:text-brandGreen transition-colors">Our Work</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#estimator" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40">
+          Get Free Estimate
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-slate-300 hover:text-brandGreen transition-colors focus:outline-none">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/5 absolute top-20 left-0 w-full flex flex-col py-6 px-6 gap-4 text-center font-semibold text-lg shadow-2xl">
+      <a href="#home" class="hover:text-brandGreen py-2 border-b border-white/5">Home</a>
+      <a href="#sports" class="hover:text-brandGreen py-2 border-b border-white/5">Sports We Cover</a>
+      <a href="#customizer" class="hover:text-brandGreen py-2 border-b border-white/5">Court Visualizer</a>
+      <a href="#estimator" class="hover:text-brandGreen py-2 border-b border-white/5">Quote Estimator</a>
+      <a href="#portfolio" class="hover:text-brandGreen py-2">Our Work</a>
+      <a href="#estimator" class="px-5 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-base mt-2 shadow-lg shadow-brandGreen/25">
+        Get Free Estimate
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="home" class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <!-- Atmospheric Background Glows -->
+    <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-brandGreen/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-brandCyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <!-- Left Info -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold uppercase tracking-wider text-brandGreen">
+          <span class="w-2 h-2 rounded-full bg-brandGreen animate-pulse"></span>
+          Premium Sports Flooring & Construction
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+          We Build The <span class="bg-gradient-to-r from-brandGreen via-brandCyan to-brandBlue bg-clip-text text-transparent">Ground Work</span> For Champions
+        </h1>
+        <p class="text-slate-400 text-lg sm:text-xl max-w-xl font-light">
+          Earthfirm Sports Infra engineered athletic arenas. From FIFA-standard turf fields to Olympic track-and-field tracks, we build durable, high-performance sports courts tailored to perfection.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+          <a href="#customizer" class="px-8 py-4 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-center font-bold tracking-wide transition-all shadow-lg hover:border-slate-500">
+            Interactive Visualizer
+          </a>
+          <a href="#estimator" class="px-8 py-4 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black text-center font-bold tracking-wide hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/20">
+            Calculate Project Cost
+          </a>
+        </div>
+        <!-- Stats Banner -->
+        <div class="grid grid-cols-3 gap-6 pt-10 border-t border-slate-800/80">
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center">
+              150<span class="text-brandGreen text-glow font-medium">+</span>
+            </div>
+            <div class="text-slate-500 text-xs sm:text-sm uppercase tracking-wider font-semibold mt-1">Courts Built</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center">
+              100<span class="text-brandCyan text-cyan-glow font-medium">%</span>
+            </div>
+            <div class="text-slate-500 text-xs sm:text-sm uppercase tracking-wider font-semibold mt-1">IAAF/FIFA Compliant</div>
+          </div>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight flex items-center">
+              10<span class="text-brandGreen text-glow font-medium">+</span>
+            </div>
+            <div class="text-slate-500 text-xs sm:text-sm uppercase tracking-wider font-semibold mt-1">Years Guarantee</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual (Hero Image Mockup) -->
+      <div class="lg:col-span-5 relative w-full flex justify-center">
+        <div class="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-800 group bg-slate-950 p-2">
+          <!-- Glass Overlay highlights -->
+          <div class="absolute inset-0 bg-gradient-to-t from-brandDark via-transparent to-transparent opacity-60 z-10 pointer-events-none"></div>
+          <div class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-brandDark/80 border border-white/10 text-[10px] uppercase font-bold tracking-widest text-slate-300">
+            Featured project
+          </div>
+          
+          <!-- Image -->
+          <img src="sports_complex_hero_1780290528902.png" alt="Premium Sports Facility by Earthfirm" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SPORTS WE COVER SECTION ================= -->
+  <section id="sports" class="py-24 bg-slate-950 relative border-y border-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          Comprehensive <span class="bg-gradient-to-r from-brandGreen to-brandCyan bg-clip-text text-transparent">Sports Solutions</span>
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          We cover a massive spectrum of high-end sports flooring, turf, and engineering solutions. Click on any category below to see details.
+        </p>
+      </div>
+
+      <!-- Sports Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- Card 1: Basketball (Double-width) -->
+        <div onclick="openSportModal('basketball')" class="md:col-span-8 glass-card rounded-3xl p-8 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-orange-600/5 rounded-full blur-[80px] pointer-events-none"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="shield-alert" class="w-6 h-6"></i> <!-- Replaced with standard icon -->
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Basketball Courts</h3>
+            <p class="text-slate-400 text-sm max-w-lg">
+              From premium Canadian Maple wood and indoor wooden flooring to synthetic outdoor surfaces and cemented outdoor courts — built for every play style and budget.
+            </p>
+          </div>
+          <span class="text-brandGreen text-sm font-semibold flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+            View specs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </div>
+
+        <!-- Card 2: Football Turf -->
+        <div onclick="openSportModal('football')" class="md:col-span-4 glass-card rounded-3xl p-8 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-green-500/5 rounded-full blur-[60px] pointer-events-none"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-brandGreen mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="tree-pine" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Football Turf</h3>
+            <p class="text-slate-400 text-sm">
+              FIFA-approved multi-layered synthetic turf designed for ultimate durability, player grip, and safety.
+            </p>
+          </div>
+          <span class="text-brandGreen text-sm font-semibold flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+            View specs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </div>
+
+        <!-- Card 3: Pickleball & Tennis -->
+        <div onclick="openSportModal('tennis')" class="md:col-span-4 glass-card rounded-3xl p-8 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-cyan-500/5 rounded-full blur-[60px] pointer-events-none"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-brandCyan mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="circle-dot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Tennis & Pickleball</h3>
+            <p class="text-slate-400 text-sm">
+              Textured acrylic coatings. Engineered speed, non-slip texture, and ITF/USAPA standards.
+            </p>
+          </div>
+          <span class="text-brandCyan text-sm font-semibold flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+            View specs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </div>
+
+        <!-- Card 4: Track & Field (Double-width) -->
+        <div onclick="openSportModal('track')" class="md:col-span-8 glass-card rounded-3xl p-8 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="gauge" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Track & Field</h3>
+            <p class="text-slate-400 text-sm max-w-lg">
+              EPDM rubber granules and PU binders. Highly durable under spike shoes, offering ultimate force reduction and rebound energy.
+            </p>
+          </div>
+          <span class="text-brandCyan text-sm font-semibold flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+            View specs <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </span>
+        </div>
+
+        <!-- Card 5: Badminton & Squash -->
+        <div onclick="openSportModal('badminton')" class="md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-500 mb-4">
+              <i data-lucide="activity" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Badminton & Squash</h4>
+            <p class="text-slate-400 text-xs">
+              PVC synthetic court sheets, shock-absorbing undersystems, and glass wall squash backings.
+            </p>
+          </div>
+          <span class="text-brandGreen text-xs font-semibold flex items-center gap-1">
+            View specs <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+
+        <!-- Card 6: Cricket Turf -->
+        <div onclick="openSportModal('cricket')" class="md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Cricket Turf</h4>
+            <p class="text-slate-400 text-xs">
+              Premium high-density cricket pitch grass matting and custom box netting setups.
+            </p>
+          </div>
+          <span class="text-brandGreen text-xs font-semibold flex items-center gap-1">
+            View specs <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+
+        <!-- Card 7: Swimming & Water Polo -->
+        <div onclick="openSportModal('swimming')" class="md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-brandBlue mb-4">
+              <i data-lucide="droplet" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Swimming & Polo</h4>
+            <p class="text-slate-400 text-xs">
+              Olympic-standard tiling, high-grade anti-wave racing lanes, heating, and filtering systems.
+            </p>
+          </div>
+          <span class="text-brandCyan text-xs font-semibold flex items-center gap-1">
+            View specs <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+
+        <!-- Card 8: Gym & Calisthenics -->
+        <div onclick="openSportModal('gym')" class="md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
+              <i data-lucide="dumbbell" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-bold mb-2">Gym & Calisthenics</h4>
+            <p class="text-slate-400 text-xs">
+              Heavy-impact rubber tiling, custom welded outdoor calisthenics rigs, and multi-functional grids.
+            </p>
+          </div>
+          <span class="text-brandCyan text-xs font-semibold flex items-center gap-1">
+            View specs <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SPORT DETAILS MODAL ================= -->
+  <div id="sport-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 p-4">
+    <div class="glass-card max-w-xl w-full rounded-3xl border border-white/10 p-8 relative transform scale-95 transition-transform duration-300 space-y-6">
+      <button onclick="closeSportModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="flex items-center gap-4">
+        <div id="modal-icon-container" class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl">
+          <!-- Icon injected via JS -->
+        </div>
+        <div>
+          <h3 id="modal-title" class="text-2xl font-extrabold">Sport Name</h3>
+          <p id="modal-tagline" class="text-brandGreen text-sm font-semibold tracking-wider uppercase">Flooring Category</p>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h4 class="text-white font-bold text-lg border-b border-white/5 pb-2">Technical Specifications</h4>
+        <ul id="modal-specs" class="space-y-3 text-slate-300 text-sm">
+          <!-- Specs list injected via JS -->
+        </ul>
+      </div>
+
+      <div class="flex gap-4 pt-4 border-t border-white/5">
+        <a href="#estimator" onclick="closeSportModal()" class="flex-1 py-3 text-center bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold rounded-xl shadow-lg shadow-brandGreen/10 hover:shadow-brandGreen/25 transition-all text-sm">
+          Get Estimate for this Court
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= INTERACTIVE COURT CUSTOMIZER ================= -->
+  <section id="customizer" class="py-24 relative overflow-hidden">
+    <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-brandCyan/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side: Interactive Controls -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-4">
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+              Interactive <span class="bg-gradient-to-r from-brandGreen via-brandCyan to-brandBlue bg-clip-text text-transparent">Court Builder</span>
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base font-light">
+              Experiment with colors and layouts to design your dream sports court. Our visualizer showcases how different floor coatings look under standard layout settings.
+            </p>
+          </div>
+
+          <!-- Court Type Selector -->
+          <div class="space-y-3">
+            <label class="text-xs uppercase tracking-wider text-slate-400 font-bold">Select Sport Facility</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button onclick="switchCourtType('basketball')" id="btn-court-basketball" class="py-3 px-4 rounded-xl border border-brandGreen bg-slate-900/60 font-semibold text-sm text-brandGreen hover:bg-slate-800 transition-colors flex flex-col items-center gap-1.5">
+                <i data-lucide="shield-alert" class="w-5 h-5"></i> Basketball
+              </button>
+              <button onclick="switchCourtType('tennis')" id="btn-court-tennis" class="py-3 px-4 rounded-xl border border-white/5 bg-slate-900/40 font-semibold text-sm text-slate-400 hover:text-white hover:bg-slate-800 transition-colors flex flex-col items-center gap-1.5">
+                <i data-lucide="circle-dot" class="w-5 h-5"></i> Tennis
+              </button>
+              <button onclick="switchCourtType('football')" id="btn-court-football" class="py-3 px-4 rounded-xl border border-white/5 bg-slate-900/40 font-semibold text-sm text-slate-400 hover:text-white hover:bg-slate-800 transition-colors flex flex-col items-center gap-1.5">
+                <i data-lucide="tree-pine" class="w-5 h-5"></i> Football Turf
+              </button>
+            </div>
+          </div>
+
+          <!-- Court Surface Colors -->
+          <div class="space-y-4">
+            <!-- Main Floor Color -->
+            <div class="space-y-2">
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Inner Court / Surface Area Color</span>
+              <div class="flex items-center gap-3">
+                <button onclick="changeColor('inner', '#0f3299')" class="w-8 h-8 rounded-full bg-[#0f3299] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Royal Blue"></button>
+                <button onclick="changeColor('inner', '#0a5c36')" class="w-8 h-8 rounded-full bg-[#0a5c36] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Forest Green"></button>
+                <button onclick="changeColor('inner', '#a12c1d')" class="w-8 h-8 rounded-full bg-[#a12c1d] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Terracotta Red"></button>
+                <button onclick="changeColor('inner', '#1e1b1b')" class="w-8 h-8 rounded-full bg-[#1e1b1b] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Championship Charcoal"></button>
+                <button onclick="changeColor('inner', '#0284c7')" class="w-8 h-8 rounded-full bg-[#0284c7] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Ocean Sky Blue"></button>
+              </div>
+            </div>
+
+            <!-- Border Color -->
+            <div class="space-y-2">
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Outer Border Color</span>
+              <div class="flex items-center gap-3">
+                <button onclick="changeColor('outer', '#1b4bd1')" class="w-8 h-8 rounded-full bg-[#1b4bd1] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Royal Blue"></button>
+                <button onclick="changeColor('outer', '#188c56')" class="w-8 h-8 rounded-full bg-[#188c56] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Bright Green"></button>
+                <button onclick="changeColor('outer', '#bf3f2e')" class="w-8 h-8 rounded-full bg-[#bf3f2e] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Bright Red"></button>
+                <button onclick="changeColor('outer', '#2d3340')" class="w-8 h-8 rounded-full bg-[#2d3340] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Steel Grey"></button>
+                <button onclick="changeColor('outer', '#0c4a6e')" class="w-8 h-8 rounded-full bg-[#0c4a6e] border-2 border-white/20 hover:border-white focus:outline-none transition-all" title="Teal Blue"></button>
+              </div>
+            </div>
+
+            <!-- Court Line Markings -->
+            <div class="space-y-2">
+              <span class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Boundary Line Color</span>
+              <div class="flex items-center gap-3">
+                <button onclick="changeColor('lines', '#ffffff')" class="w-8 h-8 rounded-full bg-white border border-white/20 hover:border-slate-400 focus:outline-none transition-all" title="Crisp White"></button>
+                <button onclick="changeColor('lines', '#eab308')" class="w-8 h-8 rounded-full bg-yellow-500 border border-white/20 hover:border-slate-400 focus:outline-none transition-all" title="Regulatory Yellow"></button>
+                <button onclick="changeColor('lines', '#a78bfa')" class="w-8 h-8 rounded-full bg-purple-400 border border-white/20 hover:border-slate-400 focus:outline-none transition-all" title="Accent Violet"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: SVG Court Render Canvas -->
+        <div class="lg:col-span-7 flex justify-center w-full">
+          <div class="w-full max-w-2xl bg-slate-900 border border-white/5 rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col items-center">
+            
+            <!-- Graphic Design details inside container -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+            <div class="w-full flex justify-between items-center mb-6 z-10">
+              <span class="text-xs font-bold tracking-widest text-slate-400 uppercase">Live Render Canvas</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-brandGreen/10 border border-brandGreen/20 text-brandGreen font-medium tracking-wide uppercase">Active Spec</span>
+            </div>
+
+            <!-- The SVG Canvas container -->
+            <div class="w-full flex justify-center py-4 z-10 select-none">
+              <!-- BASKETBALL COURT SVG -->
+              <svg id="svg-basketball" class="w-full max-w-lg aspect-[1.8] rounded-md" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Border -->
+                <rect class="court-bg" id="bb-outer" x="0" y="0" width="180" height="100" fill="#1b4bd1" />
+                <!-- Inner Court -->
+                <rect class="court-bg" id="bb-inner" x="10" y="10" width="160" height="80" fill="#0f3299" />
+                
+                <!-- Court lines -->
+                <!-- Perimeter line -->
+                <rect class="court-line" id="bb-lines-1" x="10" y="10" width="160" height="80" fill="none" stroke="#ffffff" stroke-width="1" />
+                <!-- Center Line -->
+                <line class="court-line" id="bb-lines-2" x1="90" y1="10" x2="90" y2="90" stroke="#ffffff" stroke-width="1" />
+                <!-- Center Circle -->
+                <circle class="court-line" id="bb-lines-3" cx="90" cy="50" r="18" fill="none" stroke="#ffffff" stroke-width="1" />
+                <!-- Left Key -->
+                <rect class="court-line" id="bb-lines-4" x="10" y="34" width="22" height="32" fill="none" stroke="#ffffff" stroke-width="1" />
+                <path class="court-line" id="bb-lines-5" d="M 32 38 A 12 12 0 0 1 32 62 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+                <!-- Right Key -->
+                <rect class="court-line" id="bb-lines-6" x="148" y="34" width="22" height="32" fill="none" stroke="#ffffff" stroke-width="1" />
+                <path class="court-line" id="bb-lines-7" d="M 148 38 A 12 12 0 0 0 148 62 Z" fill="none" stroke="#ffffff" stroke-width="1" />
+                <!-- Three point arcs -->
+                <!-- Left 3 point arc -->
+                <path class="court-line" id="bb-lines-8" d="M 10 20 C 35 20, 35 80, 10 80" fill="none" stroke="#ffffff" stroke-width="1" />
+                <!-- Right 3 point arc -->
+                <path class="court-line" id="bb-lines-9" d="M 170 20 C 145 20, 145 80, 170 80" fill="none" stroke="#ffffff" stroke-width="1" />
+              </svg>
+
+              <!-- TENNIS / PICKLEBALL COURT SVG (Hidden by default) -->
+              <svg id="svg-tennis" class="w-full max-w-lg aspect-[1.8] rounded-md hidden" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Border -->
+                <rect class="court-bg" id="ten-outer" x="0" y="0" width="180" height="100" fill="#188c56" />
+                <!-- Inner Court -->
+                <rect class="court-bg" id="ten-inner" x="15" y="12" width="150" height="76" fill="#0a5c36" />
+                
+                <!-- Lines -->
+                <rect class="court-line" id="ten-lines-1" x="15" y="12" width="150" height="76" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Singles Sidelines -->
+                <line class="court-line" id="ten-lines-2" x1="15" y1="20" x2="165" y2="20" stroke="#ffffff" stroke-width="0.8" />
+                <line class="court-line" id="ten-lines-3" x1="15" y1="80" x2="165" y2="80" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Service Lines -->
+                <line class="court-line" id="ten-lines-4" x1="45" y1="20" x2="45" y2="80" stroke="#ffffff" stroke-width="0.8" />
+                <line class="court-line" id="ten-lines-5" x1="135" y1="20" x2="135" y2="80" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Center Service Line -->
+                <line class="court-line" id="ten-lines-6" x1="45" y1="50" x2="135" y2="50" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Net representation -->
+                <line x1="90" y1="8" x2="90" y2="92" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="1 1" />
+              </svg>
+
+              <!-- FOOTBALL TURF SVG (Hidden by default) -->
+              <svg id="svg-football" class="w-full max-w-lg aspect-[1.8] rounded-md hidden" viewBox="0 0 180 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Border (Darker grass) -->
+                <rect class="court-bg" id="fb-outer" x="0" y="0" width="180" height="100" fill="#0c5a30" />
+                <!-- Inner Turf (Standard grass) -->
+                <rect class="court-bg" id="fb-inner" x="8" y="8" width="164" height="84" fill="#138247" />
+                
+                <!-- Turf patterns (Alternating green strips) -->
+                <g opacity="0.1">
+                  <rect x="8" y="8" width="16" height="84" fill="#ffffff" />
+                  <rect x="40" y="8" width="16" height="84" fill="#ffffff" />
+                  <rect x="72" y="8" width="16" height="84" fill="#ffffff" />
+                  <rect x="104" y="8" width="16" height="84" fill="#ffffff" />
+                  <rect x="136" y="8" width="16" height="84" fill="#ffffff" />
+                </g>
+
+                <!-- Lines -->
+                <rect class="court-line" id="fb-lines-1" x="8" y="8" width="164" height="84" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Midfield Line -->
+                <line class="court-line" id="fb-lines-2" x1="90" y1="8" x2="90" y2="92" stroke="#ffffff" stroke-width="0.8" />
+                <circle class="court-line" id="fb-lines-3" cx="90" cy="50" r="14" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Left Penalty Box -->
+                <rect class="court-line" id="fb-lines-4" x="8" y="24" width="22" height="52" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <rect class="court-line" id="fb-lines-5" x="8" y="36" width="8" height="28" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <!-- Right Penalty Box -->
+                <rect class="court-line" id="fb-lines-6" x="150" y="24" width="22" height="52" fill="none" stroke="#ffffff" stroke-width="0.8" />
+                <rect class="court-line" id="fb-lines-7" x="164" y="36" width="8" height="28" fill="none" stroke="#ffffff" stroke-width="0.8" />
+              </svg>
+            </div>
+            
+            <div class="mt-4 text-center z-10">
+              <p class="text-xs text-slate-400 italic">
+                *Colors shown are indicative. Actual surface textures and finishes will depend on aggregate grade and paint layers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE ESTIMATOR ================= -->
+  <section id="estimator" class="py-24 bg-slate-950 relative border-y border-slate-900">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          Project Cost <span class="bg-gradient-to-r from-brandGreen to-brandCyan bg-clip-text text-transparent">Estimator</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto font-light">
+          Get a dynamic structural analysis and rough project cost estimation in under a minute. 
+        </p>
+      </div>
+
+      <!-- Estimator Wizard Container -->
+      <div class="glass-card rounded-3xl p-8 border border-white/5 shadow-2xl relative overflow-hidden">
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-900 h-1.5 rounded-full mb-8 overflow-hidden">
+          <div id="estimate-progress" class="bg-gradient-to-r from-brandGreen to-brandCyan h-full w-1/4 transition-all duration-500"></div>
+        </div>
+
+        <form id="estimator-form" onsubmit="event.preventDefault();" class="space-y-8">
+          
+          <!-- STEP 1: Select Sport (Active) -->
+          <div id="step-1" class="step-pane space-y-6">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brandGreen/25 text-brandGreen flex items-center justify-center text-xs font-bold">1</span>
+              Select Sport Facility Type
+            </h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <!-- Selectable Cards -->
+              <div onclick="selectEstimatorSport(this, 'basketball', 15000)" class="estimator-sport-card p-4 rounded-xl border border-brandGreen bg-slate-900/60 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="shield-alert" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Basketball Court</span>
+              </div>
+              <div onclick="selectEstimatorSport(this, 'football_turf', 32000)" class="estimator-sport-card p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="tree-pine" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Football Turf</span>
+              </div>
+              <div onclick="selectEstimatorSport(this, 'tennis_pickleball', 12000)" class="estimator-sport-card p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="circle-dot" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Tennis/Pickleball</span>
+              </div>
+              <div onclick="selectEstimatorSport(this, 'cricket_turf', 22000)" class="estimator-sport-card p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="award" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Cricket Turf</span>
+              </div>
+              <div onclick="selectEstimatorSport(this, 'running_track', 45000)" class="estimator-sport-card p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="gauge" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Track & Field</span>
+              </div>
+              <div onclick="selectEstimatorSport(this, 'gym', 18000)" class="estimator-sport-card p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:bg-slate-900 hover:border-brandGreen cursor-pointer transition-all flex flex-col items-center gap-2 text-center group">
+                <i data-lucide="dumbbell" class="w-6 h-6 text-slate-400 group-hover:text-brandGreen"></i>
+                <span class="text-sm font-semibold">Gym / Outdoor</span>
+              </div>
+            </div>
+            <div class="flex justify-end pt-4">
+              <button type="button" onclick="goToStep(2)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5">
+                Next Step <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Dimensions & Base -->
+          <div id="step-2" class="step-pane space-y-6 hidden">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brandGreen/25 text-brandGreen flex items-center justify-center text-xs font-bold">2</span>
+              Court Dimensions & Sub-base
+            </h3>
+            
+            <div class="space-y-4">
+              <label class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Size Category</label>
+              <div class="grid grid-cols-2 gap-4">
+                <label class="size-label p-4 rounded-xl border border-white/10 bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none">
+                  <input type="radio" name="court-size" value="standard" checked onclick="updateSizeMultiplier(1.0)" class="w-4 h-4 text-brandGreen accent-brandGreen">
+                  <div>
+                    <span class="font-bold text-sm block">Standard Size</span>
+                    <span class="text-slate-400 text-xs">Official tournament sizes</span>
+                  </div>
+                </label>
+                <label class="size-label p-4 rounded-xl border border-white/10 bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none">
+                  <input type="radio" name="court-size" value="custom" onclick="updateSizeMultiplier(1.4)" class="w-4 h-4 text-brandGreen accent-brandGreen">
+                  <div>
+                    <span class="font-bold text-sm block">Premium / Large Size</span>
+                    <span class="text-slate-400 text-xs">Custom grids or extensions</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <label class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Sub-Base Construction</label>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label class="subbase-label p-4 rounded-xl border border-white/10 bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none">
+                  <input type="radio" name="sub-base" value="concrete" checked onclick="updateBaseAdd(0)" class="w-4 h-4 text-brandGreen accent-brandGreen">
+                  <div>
+                    <span class="font-bold text-sm block">Existing Concrete / Asphalt Base</span>
+                    <span class="text-slate-400 text-xs">Surface overlay painting/installation only</span>
+                  </div>
+                </label>
+                <label class="subbase-label p-4 rounded-xl border border-white/10 bg-slate-900/40 flex items-center gap-3 cursor-pointer select-none">
+                  <input type="radio" name="sub-base" value="excavation" onclick="updateBaseAdd(8000)" class="w-4 h-4 text-brandGreen accent-brandGreen">
+                  <div>
+                    <span class="font-bold text-sm block">Full Excavation & Civil Work</span>
+                    <span class="text-slate-400 text-xs">Earth excavation, stone-laying, sub-base build</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(1)" class="px-6 py-3 rounded-xl border border-white/10 hover:bg-slate-900 text-white font-bold text-sm flex items-center gap-1.5">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i> Back
+              </button>
+              <button type="button" onclick="goToStep(3)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5">
+                Next Step <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Accessories & Lighting -->
+          <div id="step-3" class="step-pane space-y-6 hidden">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brandGreen/25 text-brandGreen flex items-center justify-center text-xs font-bold">3</span>
+              Optional Facility Elements
+            </h3>
+            
+            <div class="space-y-4">
+              <label class="text-xs uppercase tracking-wider text-slate-400 font-bold block">Optional Upgrades</label>
+              <div class="space-y-3">
+                <label class="upgrade-label p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:border-brandGreen flex items-center justify-between cursor-pointer select-none">
+                  <div class="flex items-center gap-3">
+                    <input type="checkbox" id="acc-lighting" onclick="toggleUpgrade(this)" class="w-4 h-4 text-brandGreen accent-brandGreen rounded">
+                    <div>
+                      <span class="font-bold text-sm block">LED Flood Lighting System</span>
+                      <span class="text-slate-400 text-xs">High-mast outdoor LED lights and wiring</span>
+                    </div>
+                  </div>
+                  <span class="text-brandGreen text-sm font-semibold">+$2,500</span>
+                </label>
+                <label class="upgrade-label p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:border-brandGreen flex items-center justify-between cursor-pointer select-none">
+                  <div class="flex items-center gap-3">
+                    <input type="checkbox" id="acc-fencing" onclick="toggleUpgrade(this)" class="w-4 h-4 text-brandGreen accent-brandGreen rounded">
+                    <div>
+                      <span class="font-bold text-sm block">Peripheral Fencing & Netting</span>
+                      <span class="text-slate-400 text-xs">10ft high fencing with rebound structural mesh</span>
+                    </div>
+                  </div>
+                  <span class="text-brandGreen text-sm font-semibold">+$3,500</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(2)" class="px-6 py-3 rounded-xl border border-white/10 hover:bg-slate-900 text-white font-bold text-sm flex items-center gap-1.5">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i> Back
+              </button>
+              <button type="button" onclick="goToStep(4)" class="px-6 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5">
+                View Estimate Summary <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Estimate Summary & Form -->
+          <div id="step-4" class="step-pane space-y-6 hidden">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-brandGreen/25 text-brandGreen flex items-center justify-center text-xs font-bold">4</span>
+              Your Estimation Overview
+            </h3>
+
+            <!-- Estimation details card -->
+            <div class="p-6 rounded-2xl bg-slate-900 border border-white/5 space-y-4">
+              <div class="flex justify-between items-center pb-3 border-b border-white/5">
+                <span class="text-slate-400 text-sm">Estimated Project Cost:</span>
+                <span id="summary-cost" class="text-2xl sm:text-3xl font-extrabold text-brandGreen tracking-tight">$15,000</span>
+              </div>
+              <div class="grid grid-cols-2 gap-4 text-xs sm:text-sm">
+                <div>
+                  <span class="text-slate-500 block">Est. Completion:</span>
+                  <span id="summary-duration" class="font-semibold text-white">3-4 Weeks</span>
+                </div>
+                <div>
+                  <span class="text-slate-500 block">Durability Standard:</span>
+                  <span class="font-semibold text-white">ITF / IAAF Level 1 Class</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lead Capture Form -->
+            <div class="space-y-4 pt-2">
+              <p class="text-slate-400 text-xs sm:text-sm">
+                Submit this estimation profile to Earthfirm Sports Infra. An engineer will contact you with a customized structural design plan.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" placeholder="Your Name" required class="px-4 py-3 rounded-xl bg-slate-900/60 border border-white/10 focus:border-brandGreen focus:outline-none text-sm text-white">
+                <input type="email" placeholder="Email Address" required class="px-4 py-3 rounded-xl bg-slate-900/60 border border-white/10 focus:border-brandGreen focus:outline-none text-sm text-white">
+              </div>
+            </div>
+
+            <div class="flex justify-between pt-4">
+              <button type="button" onclick="goToStep(3)" class="px-6 py-3 rounded-xl border border-white/10 hover:bg-slate-900 text-white font-bold text-sm flex items-center gap-1.5">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i> Back
+              </button>
+              <button type="button" onclick="submitQuote()" class="px-8 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-extrabold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5">
+                Request Official Proposal <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- SUCCESS SCREEN -->
+          <div id="step-success" class="step-pane text-center py-12 space-y-6 hidden">
+            <div class="w-16 h-16 rounded-full bg-brandGreen/10 border border-brandGreen/30 text-brandGreen flex items-center justify-center mx-auto text-3xl">
+              <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-2xl font-extrabold text-white">Proposal Request Submitted!</h3>
+              <p class="text-slate-400 text-sm max-w-sm mx-auto">
+                Thank you! Our technical sports consultants will review your site plan inputs and draft a customized quote brochure.
+              </p>
+            </div>
+            <button type="button" onclick="resetEstimator()" class="px-6 py-2.5 rounded-xl border border-white/10 hover:bg-slate-900 text-slate-300 font-bold text-xs">
+              Recalculate Estimate
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY & PORTFOLIO SECTION ================= -->
+  <section id="portfolio" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          Crafting <span class="bg-gradient-to-r from-brandGreen to-brandCyan bg-clip-text text-transparent">Elite Performance</span> Spaces
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Explore photographs of active arenas designed and built by Earthfirm Sports Infra.
+        </p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Gallery Card 1 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/5 group shadow-lg">
+          <div class="w-full aspect-[16/10] overflow-hidden bg-slate-950 p-2">
+            <img src="indoor_wooden_court_1780290555495.png" alt="Indoor Maple Wood Basketball Court" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-xs font-bold text-brandGreen tracking-widest uppercase">Indoor Flooring Project</span>
+            <h3 class="text-xl font-bold">Canadian Maple Court Setup</h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Standard FIBA-certified wooden court with specialized shock-absorption underlay installed for sports club arenas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gallery Card 2 -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/5 group shadow-lg">
+          <div class="w-full aspect-[16/10] overflow-hidden bg-slate-950 p-2">
+            <img src="football_turf_1780290575250.png" alt="Synthetic Football Turf" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700">
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-xs font-bold text-brandCyan tracking-widest uppercase">Outdoor Turf Facility</span>
+            <h3 class="text-xl font-bold">FIFA-Grade Multi-layered Turf Field</h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Synthetic football field built using top-tier non-abrasive turf fibers, structural sub-base layers, and automated drainage solutions.
+            </p>
+          </div>
+        </div>
+        <!-- Gallery Card 3: Synthetic Outdoor Basketball Court -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/5 group shadow-lg">
+          <div class="w-full aspect-[16/10] overflow-hidden bg-slate-950 p-2">
+            <div class="w-full h-full rounded-2xl bg-gradient-to-br from-orange-900/30 via-slate-800 to-sky-900/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+              <div class="text-center space-y-2">
+                <i data-lucide="sun" class="w-10 h-10 text-orange-400 mx-auto"></i>
+                <span class="text-slate-300 text-sm font-semibold">Synthetic Outdoor Court</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-xs font-bold text-orange-400 tracking-widest uppercase">Outdoor Synthetic Surface</span>
+            <h3 class="text-xl font-bold">Acrylic / PP Tile Outdoor Court</h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              All-weather multi-layer acrylic or polypropylene interlocking tile surface with UV protection, anti-slip texture, and integrated drainage for residential and commercial outdoor use.
+            </p>
+          </div>
+        </div>
+
+        <!-- Gallery Card 4: Cemented Outdoor Basketball Court -->
+        <div class="glass-card rounded-3xl overflow-hidden border border-white/5 group shadow-lg">
+          <div class="w-full aspect-[16/10] overflow-hidden bg-slate-950 p-2">
+            <div class="w-full h-full rounded-2xl bg-gradient-to-br from-gray-700/40 via-slate-800 to-gray-600/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+              <div class="text-center space-y-2">
+                <i data-lucide="landmark" class="w-10 h-10 text-gray-400 mx-auto"></i>
+                <span class="text-slate-300 text-sm font-semibold">Cemented Outdoor Court</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <span class="text-xs font-bold text-gray-400 tracking-widest uppercase">Outdoor Concrete Surface</span>
+            <h3 class="text-xl font-bold">Reinforced Concrete Open-Air Court</h3>
+            <p class="text-slate-400 text-xs sm:text-sm">
+              Heavy-duty reinforced concrete base with sport-grade acrylic paint finish, regulation line markings, and low-maintenance design — ideal for municipal, school, and community courts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before/After Interactive Comparison (CSS/JS Slider) -->
+      <div class="mt-16 max-w-3xl mx-auto space-y-4">
+        <h3 class="text-center text-xl font-bold text-slate-300">Construction Precision Slider</h3>
+        <div class="relative w-full aspect-[16/9] rounded-3xl overflow-hidden border border-white/5 shadow-2xl select-none">
+          <!-- Before Canvas (Asphalt ground representation) -->
+          <div class="absolute inset-0 bg-slate-800 flex items-center justify-center">
+            <div class="absolute inset-0 bg-radial-gradient from-slate-700 to-slate-900"></div>
+            <!-- Graphic layout mimicking initial civil grading work -->
+            <div class="w-full h-full opacity-10 flex flex-col justify-around p-8">
+              <div class="border border-dashed border-white h-1 flex justify-around"></div>
+              <div class="border border-dashed border-white h-1"></div>
+            </div>
+            <div class="absolute bottom-6 left-6 z-10 px-3 py-1 rounded bg-black/60 text-xs uppercase tracking-widest font-semibold text-slate-400">
+              Before (Sub-base Preparation)
+            </div>
+          </div>
+          
+          <!-- After Canvas (Completed Acrylic Court Layout overlay) -->
+          <div id="after-slider-img" class="absolute inset-0 bg-blue-600 flex items-center justify-center overflow-hidden transition-all duration-300" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 to-blue-900"></div>
+            
+            <!-- SVG tennis court layout replica -->
+            <svg class="w-4/5 h-4/5" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="100" height="50" fill="#188c56" />
+              <rect x="10" y="8" width="80" height="34" fill="#0a5c36" />
+              <rect x="10" y="8" width="80" height="34" fill="none" stroke="#ffffff" stroke-width="0.5" />
+              <line x1="50" y1="5" x2="50" y2="45" stroke="#ffffff" stroke-width="0.5" />
+              <circle cx="50" cy="25" r="5" fill="none" stroke="#ffffff" stroke-width="0.5" />
+            </svg>
+
+            <div class="absolute bottom-6 left-6 z-10 px-3 py-1 rounded bg-brandGreen/80 text-xs uppercase tracking-widest font-bold text-black">
+              After (Finished Performance Court)
+            </div>
+          </div>
+
+          <!-- Slider Handle bar -->
+          <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-brandGreen z-20 cursor-ew-resize flex items-center justify-center" style="left: 50%;">
+            <div class="w-8 h-8 rounded-full bg-brandGreen border border-black shadow-lg flex items-center justify-center text-black">
+              <i data-lucide="expand" class="w-4 h-4 rotate-45"></i>
+            </div>
+          </div>
+
+          <!-- Overlay transparent listener -->
+          <div id="slider-trigger" class="absolute inset-0 z-30 cursor-ew-resize"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 border-t border-slate-900 py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <!-- Info col -->
+      <div class="space-y-4 md:col-span-2">
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brandGreen to-brandCyan flex items-center justify-center font-bold text-black text-lg">
+            E
+          </div>
+          <span class="text-lg font-extrabold tracking-wider text-white">EARTHFIRM SPORTS INFRA</span>
+        </a>
+        <p class="text-slate-400 text-sm max-w-sm font-light">
+          Engineering the surfaces of play. Certified FIFA Turf, IAAF Running Tracks, ITF Acrylic Courts, and elite wooden arenas designed for athletes globally.
+        </p>
+      </div>
+
+      <!-- Navigation col -->
+      <div class="space-y-3">
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Useful Links</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#home" class="hover:text-brandGreen">Home</a></li>
+          <li><a href="#sports" class="hover:text-brandGreen">Sports Coverage</a></li>
+          <li><a href="#customizer" class="hover:text-brandGreen">Interactive Visualizer</a></li>
+          <li><a href="#estimator" class="hover:text-brandGreen">Estimate Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacts col -->
+      <div class="space-y-3">
+        <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Contact Info</h4>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brandGreen"></i> contact@earthfirm.com</li>
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brandGreen"></i> +1 (800) 555-SPORTS</li>
+          <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-brandGreen"></i> Indore, Madhya Pradesh, India</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 pt-12 mt-12 border-t border-slate-900/60 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© 2026 Earthfirm Sports Infra. All rights reserved.</p>
+      <div class="flex gap-4">
+        <span>ISO 9001:2015 Certified</span>
+        <span>|</span>
+        <span>FIFA & IAAF Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile menu toggler
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Customizer Color State
+    let selectedCourt = 'basketball';
+    const courtColors = {
+      basketball: { inner: '#0f3299', outer: '#1b4bd1', lines: '#ffffff' },
+      tennis: { inner: '#0a5c36', outer: '#188c56', lines: '#ffffff' },
+      football: { inner: '#138247', outer: '#0c5a30', lines: '#ffffff' }
+    };
+
+    function switchCourtType(type) {
+      selectedCourt = type;
+      
+      // Update UI Toggles
+      const courts = ['basketball', 'tennis', 'football'];
+      courts.forEach(c => {
+        const btn = document.getElementById(`btn-court-${c}`);
+        const svg = document.getElementById(`svg-${c}`);
+        
+        if (c === type) {
+          btn.classList.add('border-brandGreen', 'text-brandGreen', 'bg-slate-900/60');
+          btn.classList.remove('border-white/5', 'text-slate-400', 'bg-slate-900/40');
+          svg.classList.remove('hidden');
+        } else {
+          btn.classList.remove('border-brandGreen', 'text-brandGreen', 'bg-slate-900/60');
+          btn.classList.add('border-white/5', 'text-slate-400', 'bg-slate-900/40');
+          svg.classList.add('hidden');
+        }
+      });
+
+      // Update actual SVG colors to current state
+      applyColorsToSvg();
+    }
+
+    function changeColor(part, value) {
+      courtColors[selectedCourt][part] = value;
+      applyColorsToSvg();
+    }
+
+    function applyColorsToSvg() {
+      const colors = courtColors[selectedCourt];
+      if (selectedCourt === 'basketball') {
+        document.getElementById('bb-inner').setAttribute('fill', colors.inner);
+        document.getElementById('bb-outer').setAttribute('fill', colors.outer);
+        for(let i=1; i<=9; i++) {
+          document.getElementById(`bb-lines-${i}`).setAttribute('stroke', colors.lines);
+        }
+      } else if (selectedCourt === 'tennis') {
+        document.getElementById('ten-inner').setAttribute('fill', colors.inner);
+        document.getElementById('ten-outer').setAttribute('fill', colors.outer);
+        for(let i=1; i<=6; i++) {
+          document.getElementById(`ten-lines-${i}`).setAttribute('stroke', colors.lines);
+        }
+      } else if (selectedCourt === 'football') {
+        document.getElementById('fb-inner').setAttribute('fill', colors.inner);
+        document.getElementById('fb-outer').setAttribute('fill', colors.outer);
+        for(let i=1; i<=7; i++) {
+          const el = document.getElementById(`fb-lines-${i}`);
+          if (el) el.setAttribute('stroke', colors.lines);
+        }
+      }
+    }
+
+    // Estimator State & Calculations
+    let estimatorSport = 'basketball';
+    let baseSportPrice = 15000;
+    let sizeMultiplier = 1.0;
+    let baseAddition = 0;
+    let upgradeTotal = 0;
+    let currentStep = 1;
+
+    function selectEstimatorSport(element, sport, basePrice) {
+      estimatorSport = sport;
+      baseSportPrice = basePrice;
+      
+      // Update active cards
+      const cards = document.querySelectorAll('.estimator-sport-card');
+      cards.forEach(c => {
+        c.classList.remove('border-brandGreen', 'bg-slate-900/60');
+        c.classList.add('border-white/10', 'bg-slate-900/40');
+      });
+
+      element.classList.remove('border-white/10', 'bg-slate-900/40');
+      element.classList.add('border-brandGreen', 'bg-slate-900/60');
+      
+      calculateEstimate();
+    }
+
+    function updateSizeMultiplier(mult) {
+      sizeMultiplier = mult;
+      calculateEstimate();
+      // Defer so the browser finishes updating radio.checked before we read it
+      setTimeout(() => {
+        document.querySelectorAll('.size-label').forEach(l => {
+          const radio = l.querySelector('input[type="radio"]');
+          if (radio && radio.checked) {
+            l.classList.add('border-brandGreen', 'bg-slate-900/60');
+            l.classList.remove('border-white/10', 'bg-slate-900/40');
+          } else {
+            l.classList.remove('border-brandGreen', 'bg-slate-900/60');
+            l.classList.add('border-white/10', 'bg-slate-900/40');
+          }
+        });
+      }, 0);
+    }
+
+    function updateBaseAdd(addVal) {
+      baseAddition = addVal;
+      calculateEstimate();
+      // Defer so the browser finishes updating radio.checked before we read it
+      setTimeout(() => {
+        document.querySelectorAll('.subbase-label').forEach(l => {
+          const radio = l.querySelector('input[type="radio"]');
+          if (radio && radio.checked) {
+            l.classList.add('border-brandGreen', 'bg-slate-900/60');
+            l.classList.remove('border-white/10', 'bg-slate-900/40');
+          } else {
+            l.classList.remove('border-brandGreen', 'bg-slate-900/60');
+            l.classList.add('border-white/10', 'bg-slate-900/40');
+          }
+        });
+      }, 0);
+    }
+
+    function toggleUpgrade(input) {
+      const activeLighting = document.getElementById('acc-lighting').checked;
+      const activeFencing = document.getElementById('acc-fencing').checked;
+      
+      upgradeTotal = 0;
+      if (activeLighting) upgradeTotal += 2500;
+      if (activeFencing) upgradeTotal += 3500;
+      
+      // Update label border
+      const parentLabel = input.closest('label');
+      if (input.checked) {
+        parentLabel.classList.remove('border-white/10', 'bg-slate-900/40');
+        parentLabel.classList.add('border-brandGreen', 'bg-slate-900/60');
+      } else {
+        parentLabel.classList.add('border-white/10', 'bg-slate-900/40');
+        parentLabel.classList.remove('border-brandGreen', 'bg-slate-900/60');
+      }
+      
+      calculateEstimate();
+    }
+
+    function calculateEstimate() {
+      const finalCost = (baseSportPrice * sizeMultiplier) + baseAddition + upgradeTotal;
+      document.getElementById('summary-cost').textContent = '$' + finalCost.toLocaleString();
+      
+      // Estimate Duration
+      let duration = "3-4 Weeks";
+      if (estimatorSport === 'football_turf' || estimatorSport === 'running_track') {
+        duration = "5-7 Weeks";
+      }
+      if (baseAddition > 0) {
+        duration = "8-10 Weeks"; // full civil excavation adds time
+      }
+      document.getElementById('summary-duration').textContent = duration;
+    }
+
+    function goToStep(step) {
+      currentStep = step;
+      
+      // Update progress bar
+      const progressPercent = (step / 4) * 100;
+      document.getElementById('estimate-progress').style.width = progressPercent + '%';
+
+      // Hide all panes
+      const panes = document.querySelectorAll('.step-pane');
+      panes.forEach(p => p.classList.add('hidden'));
+
+      // Show target step pane
+      document.getElementById(`step-${step}`).classList.remove('hidden');
+    }
+
+    function submitQuote() {
+      // Hide step pane and show success
+      document.getElementById('step-4').classList.add('hidden');
+      document.getElementById('step-success').classList.remove('hidden');
+      document.getElementById('estimate-progress').style.width = '100%';
+    }
+
+    function initEstimatorBorders() {
+      // Sport cards: highlight the first one (basketball default)
+      const sportCards = document.querySelectorAll('.estimator-sport-card');
+      sportCards.forEach((c, idx) => {
+        if (idx === 0) {
+          c.classList.add('border-brandGreen', 'bg-slate-900/60');
+          c.classList.remove('border-white/10', 'bg-slate-900/40');
+        } else {
+          c.classList.remove('border-brandGreen', 'bg-slate-900/60');
+          c.classList.add('border-white/10', 'bg-slate-900/40');
+        }
+      });
+
+      // Size labels: highlight whichever radio is checked
+      document.querySelectorAll('.size-label').forEach(l => {
+        const radio = l.querySelector('input[type="radio"]');
+        if (radio && radio.checked) {
+          l.classList.add('border-brandGreen', 'bg-slate-900/60');
+          l.classList.remove('border-white/10', 'bg-slate-900/40');
+        } else {
+          l.classList.remove('border-brandGreen', 'bg-slate-900/60');
+          l.classList.add('border-white/10', 'bg-slate-900/40');
+        }
+      });
+
+      // Subbase labels: highlight whichever radio is checked
+      document.querySelectorAll('.subbase-label').forEach(l => {
+        const radio = l.querySelector('input[type="radio"]');
+        if (radio && radio.checked) {
+          l.classList.add('border-brandGreen', 'bg-slate-900/60');
+          l.classList.remove('border-white/10', 'bg-slate-900/40');
+        } else {
+          l.classList.remove('border-brandGreen', 'bg-slate-900/60');
+          l.classList.add('border-white/10', 'bg-slate-900/40');
+        }
+      });
+
+      // Upgrade labels: clear all (unchecked by default)
+      document.querySelectorAll('.upgrade-label').forEach(l => {
+        l.classList.add('border-white/10', 'bg-slate-900/40');
+        l.classList.remove('border-brandGreen', 'bg-slate-900/60');
+      });
+    }
+
+    function resetEstimator() {
+      // Reset variables
+      estimatorSport = 'basketball';
+      baseSportPrice = 15000;
+      sizeMultiplier = 1.0;
+      baseAddition = 0;
+      upgradeTotal = 0;
+
+      // Reset checkboxes
+      document.getElementById('acc-lighting').checked = false;
+      document.getElementById('acc-fencing').checked = false;
+
+      // Reset form radio selections
+      const sizeRadios = document.getElementsByName('court-size');
+      sizeRadios[0].checked = true;
+      const baseRadios = document.getElementsByName('sub-base');
+      baseRadios[0].checked = true;
+
+      // Re-apply all borders cleanly
+      initEstimatorBorders();
+
+      // Reset step
+      goToStep(1);
+      calculateEstimate();
+    }
+
+    // Apply correct initial borders on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(initEstimatorBorders, 0);
+    });
+
+    // Sport Spec Database for Modal Popups
+    const sportSpecs = {
+      basketball: {
+        title: "Basketball Courts",
+        tagline: "4 Court Types — Indoor & Outdoor",
+        icon: "shield-alert",
+        iconBg: "bg-orange-500/10",
+        iconColor: "text-orange-500",
+        specs: [
+          "<strong>1. Canadian Maple Wood Court:</strong> FIBA Level 1 certified Canadian Hard Maple flooring with shock-absorbent rubber pads, anti-termite treated sleepers, and polyurethane top coating. Best for professional clubs, university arenas, and stadium-grade venues.",
+          "<strong>2. Indoor Wooden Court:</strong> Engineered hardwood or teak plank flooring with cushioned sub-floor system. Cost-effective alternative to maple with excellent bounce and grip. Best for school gymnasiums, community centres, and indoor training facilities.",
+          "<strong>3. Synthetic Outdoor Court:</strong> Multi-layer acrylic / PU / PP interlocking tile surface designed for all-weather outdoor play. UV-resistant, anti-slip texture with integrated drainage. Best for residential complexes, public parks, and corporate campuses.",
+          "<strong>4. Cemented Outdoor Court:</strong> Reinforced concrete base with sport-grade acrylic paint finish and line markings. Highly durable, low-maintenance surface. Best for municipal courts, school playgrounds, and community open-air courts.",
+          "<strong>Compliance:</strong> All court types built to FIBA standards with customisable dimensions and accessories."
+        ]
+      },
+      football: {
+        title: "Football Turf",
+        tagline: "Professional Synthetic Fields",
+        icon: "tree-pine",
+        iconBg: "bg-green-500/10",
+        iconColor: "text-brandGreen",
+        specs: [
+          "<strong>Turf Height:</strong> 40mm to 60mm monofilament diamond shape fibres.",
+          "<strong>Infill System:</strong> Silica sand + premium cryogenic rubber granules.",
+          "<strong>Sub-base Requirement:</strong> Dense graded aggregate + E-layer shock pad.",
+          "<strong>Compliance:</strong> FIFA Quality / Quality Pro Certification standards.",
+          "<strong>Best Used For:</strong> 5-a-side, 7-a-side, full tournament football fields."
+        ]
+      },
+      tennis: {
+        title: "Tennis & Pickleball Courts",
+        tagline: "Vibrant Acrylic Cushion Flooring",
+        icon: "circle-dot",
+        iconBg: "bg-cyan-500/10",
+        iconColor: "text-brandCyan",
+        specs: [
+          "<strong>Flooring Layers:</strong> 5 to 8 layer flexible acrylic coating systems.",
+          "<strong>Shock-Absorption:</strong> Incorporated rubber granule cushion matrix.",
+          "<strong>Sub-base Construction:</strong> Asphalt base preferred, or post-tensioned concrete.",
+          "<strong>Compliance:</strong> ITF Classified speed ratings (Slow, Medium, Fast).",
+          "<strong>Best Used For:</strong> Club championships, residential projects, community centers."
+        ]
+      },
+      track: {
+        title: "Track & Field Facilities",
+        tagline: "EPDM Synthetics & Polyurethane Cushions",
+        icon: "gauge",
+        iconBg: "bg-red-500/10",
+        iconColor: "text-red-500",
+        specs: [
+          "<strong>Material:</strong> Full-depth solid polyurethane with broadcast EPDM granules.",
+          "<strong>Thickness:</strong> 13mm standard regulatory depth.",
+          "<strong>Traction Capability:</strong> Highly resistant to athletic spikes and weathering.",
+          "<strong>Compliance:</strong> World Athletics (IAAF) certified layout & marking.",
+          "<strong>Best Used For:</strong> Sports universities, national sports schools, municipal tracks."
+        ]
+      },
+      badminton: {
+        title: "Badminton & Squash",
+        tagline: "Mat Flooring & Glass Backwalls",
+        icon: "activity",
+        iconBg: "bg-yellow-500/10",
+        iconColor: "text-yellow-500",
+        specs: [
+          "<strong>Badminton Surface:</strong> 4.5mm thick PVC vinyl mats with snake-skin textures.",
+          "<strong>Squash Surface:</strong> Hard maple wood flooring with custom-designed shock-pad sublayers.",
+          "<strong>Squash Walls:</strong> 3-coat heavy plaster system or structured safety glass backwalls.",
+          "<strong>Compliance:</strong> BWF (Badminton) & WSF (Squash) regulations.",
+          "<strong>Best Used For:</strong> Indoor badminton academies, clubhouse squash arenas."
+        ]
+      },
+      cricket: {
+        title: "Cricket Turfs & Nets",
+        tagline: "Premium High-Density Grass Mats",
+        icon: "award",
+        iconBg: "bg-emerald-500/10",
+        iconColor: "text-emerald-400",
+        specs: [
+          "<strong>Turf Density:</strong> High-stitch dense monofilament grass fibers.",
+          "<strong>Pitch Sub-base:</strong> Concrete base underneath heavy-duty industrial shock pad.",
+          "<strong>Fencing Infrastructure:</strong> Heavy-gauge galvanized steel posts with UV-treated nylon nets.",
+          "<strong>Performance:</strong> Consistent ball bounce and natural seam movements.",
+          "<strong>Best Used For:</strong> Indoor training nets, academy practice pitches."
+        ]
+      },
+      swimming: {
+        title: "Swimming Pools & Water Polo",
+        tagline: "Olympic Scale Aquatics",
+        icon: "droplet",
+        iconBg: "bg-blue-500/10",
+        iconColor: "text-brandBlue",
+        specs: [
+          "<strong>Construction Style:</strong> Cast-in-place concrete pool shell with chemical waterproof coatings.",
+          "<strong>Flooring Tiling:</strong> Anti-slip commercial porcelain tiles with depth indicators.",
+          "<strong>Accessories:</strong> Olympic racing lanes, anti-wave boundary markers, starting blocks.",
+          "<strong>Water Systems:</strong> High-capacity sand filters, UV disinfection, automated temperature heaters.",
+          "<strong>Best Used For:</strong> Olympic training pools, aquatic clubs."
+        ]
+      },
+      gym: {
+        title: "Gyms & Calisthenics Rigs",
+        tagline: "Impact Protection Flooring & Steel Frames",
+        icon: "dumbbell",
+        iconBg: "bg-purple-500/10",
+        iconColor: "text-purple-400",
+        specs: [
+          "<strong>Flooring Material:</strong> 15mm to 30mm thick recycled SBR rubber shock tiles.",
+          "<strong>Structure:</strong> Custom laser-cut carbon steel frames for outdoor calisthenics parks.",
+          "<strong>Finishes:</strong> Double-powder coat for weather protection and grip traction.",
+          "<strong>Player Safety:</strong> Fall-height shock absorption rating up to 3 meters.",
+          "<strong>Best Used For:</strong> Commercial fitness clubs, public outdoor parks, weight rooms."
+        ]
+      }
+    };
+
+    function openSportModal(sportKey) {
+      const data = sportSpecs[sportKey];
+      if (!data) return;
+
+      // Inject data
+      document.getElementById('modal-title').textContent = data.title;
+      document.getElementById('modal-tagline').textContent = data.tagline;
+      
+      // Setup icon container
+      const iconContainer = document.getElementById('modal-icon-container');
+      iconContainer.className = `w-14 h-14 rounded-2xl flex items-center justify-center text-2xl ${data.iconBg} ${data.iconColor}`;
+      iconContainer.innerHTML = `<i data-lucide="${data.icon}" class="w-7 h-7"></i>`;
+      
+      // Specs List
+      const specsUl = document.getElementById('modal-specs');
+      specsUl.innerHTML = '';
+      data.specs.forEach(s => {
+        const li = document.createElement('li');
+        li.innerHTML = s;
+        specsUl.appendChild(li);
+      });
+
+      // Show Modal
+      const modal = document.getElementById('sport-modal');
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('.glass-card').classList.remove('scale-95');
+      }, 50);
+
+      // Re-trigger lucide icons
+      lucide.createIcons();
+    }
+
+    function closeSportModal() {
+      const modal = document.getElementById('sport-modal');
+      modal.classList.add('opacity-0');
+      modal.querySelector('.glass-card').classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    // Before/After Slider Functionality
+    const sliderTrigger = document.getElementById('slider-trigger');
+    const afterImg = document.getElementById('after-slider-img');
+    const sliderHandle = document.getElementById('slider-handle');
+
+    function updateSlider(e) {
+      const rect = sliderTrigger.getBoundingClientRect();
+      const posX = e.clientX - rect.left;
+      let percent = (posX / rect.width) * 100;
+      
+      if (percent < 0) percent = 0;
+      if (percent > 100) percent = 100;
+      
+      afterImg.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+      sliderHandle.style.left = `${percent}%`;
+    }
+
+    // Mouse Events
+    let isDraggingSlider = false;
+    sliderTrigger.addEventListener('mousedown', (e) => {
+      isDraggingSlider = true;
+      updateSlider(e);
+    });
+    window.addEventListener('mouseup', () => {
+      isDraggingSlider = false;
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingSlider) return;
+      updateSlider(e);
+    });
+
+    // Touch Events for Mobile
+    sliderTrigger.addEventListener('touchstart', (e) => {
+      isDraggingSlider = true;
+      updateSlider(e.touches[0]);
+    });
+    window.addEventListener('touchend', () => {
+      isDraggingSlider = false;
+    });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDraggingSlider) return;
+      updateSlider(e.touches[0]);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (223,42)<a class='flex items-center gap-2 group' href='#' />
+	[1] (189,42)<div >E />
+	[2] (235,42)<span >EARTHFIRM />
+		[3] (235,54)<span >Sports Infra />
+[4] (375,42)<a class='hover:text-brandGreen transition-colors' href='#home'>Home />
+[5] (428,42)<a class='hover:text-brandGreen transition-colors' href='#sports'>Sports We Cover />
+[6] (498,42)<a class='hover:text-brandGreen transition-colors' href='#customizer'>Court Visualizer />
+[7] (567,42)<a class='hover:text-brandGreen transition-colors' href='#estimator'>Quote Estimator />
+[8] (627,42)<a class='hover:text-brandGreen transition-colors' href='#portfolio'>Our Work />
+[9] (780,42)<a class='px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40' href='#estimator'>Get Free Estimate />
+[10] (282,156)<div class='md:col-span-4 glass-card rounded-3xl p-8 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden' />
+	[11] (282,102)<div  />
+		[12] (282,114)<h3 >Tennis & Pickleball />
+		[13] (282,161)<p >Textured acrylic coatings. Engineered speed, non-slip texture, and ITF/USAPA standards. />
+	[14] (282,279)<span >View specs />
+[15] (609,156)<div class='md:col-span-8 glass-card rounded-3xl p-8 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-80 relative overflow-hidden' />
+	[16] (609,102)<div  />
+		[17] (609,114)<h3 >Track & Field />
+		[18] (548,161)<p >EPDM rubber granules and PU binders. Highly durable under spike shoes, offering ultimate force reduction and rebound energy. />
+	[19] (609,279)<span >View specs />
+[20] (255,503)<div class='md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72' />
+	[21] (255,451)<div  />
+		[22] (203,398)<div  />
+		[23] (255,451)<h4 >Badminton & Squash />
+		[24] (255,499)<p >PVC synthetic court sheets, shock-absorbing undersystems, and glass wall squash backings. />
+	[25] (255,620)<span >View specs />
+[26] (418,503)<div class='md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72' />
+	[27] (418,442)<div  />
+		[28] (366,398)<div  />
+		[29] (418,451)<h4 >Cricket Turf />
+		[30] (418,491)<p >Premium high-density cricket pitch grass matting and custom box netting setups. />
+	[31] (418,620)<span >View specs />
+[32] (582,503)<div class='md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72' />
+	[33] (582,451)<div  />
+		[34] (530,398)<div  />
+		[35] (582,451)<h4 >Swimming & Polo />
+		[36] (582,499)<p >Olympic-standard tiling, high-grade anti-wave racing lanes, heating, and filtering systems. />
+	[37] (582,620)<span >View specs />
+[38] (745,503)<div class='md:col-span-3 glass-card rounded-3xl p-6 border border-white/5 glow-cyan-hover transition-all duration-300 cursor-pointer flex flex-col justify-between group h-72' />
+	[39] (745,451)<div  />
+		[40] (693,398)<div  />
+		[41] (745,451)<h4 >Gym & Calisthenics />
+		[42] (745,499)<p >Heavy-impact rubber tiling, custom welded outdoor calisthenics rigs, and multi-functional grids. />
+	[43] (745,620)<span >View specs />
+Interactive
+Court Builder
+Experiment with colors and layouts to design your dream sports court. Our visualizer showcases how different floor coatings look under standard layout settings.
+Live Render Canvas
+Active Spec
+
+</current_dom>

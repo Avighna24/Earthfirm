@@ -1,0 +1,38 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (223,42)<a class='flex items-center gap-2 group' href='#' />
+	[1] (189,42)<div >E />
+	[2] (235,42)<span >EARTHFIRM />
+		[3] (235,54)<span >Sports Infra />
+[4] (375,42)<a class='hover:text-brandGreen transition-colors' href='#home'>Home />
+[5] (428,42)<a class='hover:text-brandGreen transition-colors' href='#sports'>Sports We Cover />
+[6] (498,42)<a class='hover:text-brandGreen transition-colors' href='#customizer'>Court Visualizer />
+[7] (567,42)<a class='hover:text-brandGreen transition-colors' href='#estimator'>Quote Estimator />
+[8] (627,42)<a class='hover:text-brandGreen transition-colors' href='#portfolio'>Our Work />
+[9] (780,42)<a class='px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40' href='#estimator'>Get Free Estimate />
+Project Cost
+Estimator
+Get a dynamic structural analysis and rough project cost estimation in under a minute.
+3
+Optional Facility Elements
+[10] (500,531)<label class='text-xs uppercase tracking-wider text-slate-400 font-bold block'>Optional Upgrades />
+[11] (500,598)<label class='p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:border-brandGreen flex items-center justify-between cursor-pointer select-none' />
+	[12] (369,598)<div  />
+		[13] (309,598)<input class='w-4 h-4 text-brandGreen accent-brandGreen rounded' id='acc-lighting' />
+		[14] (376,598)<div  />
+			[15] (376,585)<span >LED Flood Lighting System />
+			[16] (376,610)<span >High-mast outdoor LED lights and wiring />
+	[17] (681,598)<span >+$2,500 />
+[18] (500,693)<label class='p-4 rounded-xl border border-white/10 bg-slate-900/40 hover:border-brandGreen flex items-center justify-between cursor-pointer select-none' />
+	[19] (376,693)<div  />
+		[20] (309,693)<input class='w-4 h-4 text-brandGreen accent-brandGreen rounded' id='acc-fencing' />
+		[21] (384,693)<div  />
+			[22] (384,680)<span >Peripheral Fencing & Netting />
+			[23] (384,705)<span >10ft high fencing with rebound structural mesh />
+	[24] (681,693)<span >+$3,500 />
+[25] (323,801)<button class='px-6 py-3 rounded-xl border border-white/10 hover:bg-slate-900 text-white font-bold text-sm flex items-center gap-1.5'>Back />
+[26] (644,801)<button class='px-6 py-3 rounded-xl bg-gradient-to-r from-brandGreen to-brandCyan text-black font-bold text-sm shadow-lg hover:scale-105 active:scale-95 transition-transform flex items-center gap-1.5'>View Estimate Summary />
+
+</current_dom>

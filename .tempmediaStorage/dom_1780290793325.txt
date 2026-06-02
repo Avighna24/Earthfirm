@@ -1,0 +1,27 @@
+[0] (223,42)<a class='flex items-center gap-2 group' href='#' />
+	[1] (189,42)<div >E />
+	[2] (235,42)<span >EARTHFIRM />
+		[3] (235,54)<span >Sports Infra />
+[4] (375,42)<a class='hover:text-brandGreen transition-colors' href='#home'>Home />
+[5] (428,42)<a class='hover:text-brandGreen transition-colors' href='#sports'>Sports We Cover />
+[6] (498,42)<a class='hover:text-brandGreen transition-colors' href='#customizer'>Court Visualizer />
+[7] (567,42)<a class='hover:text-brandGreen transition-colors' href='#estimator'>Quote Estimator />
+[8] (627,42)<a class='hover:text-brandGreen transition-colors' href='#portfolio'>Our Work />
+[9] (780,42)<a class='px-5 py-2.5 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black font-semibold text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/25 hover:shadow-brandGreen/40' href='#estimator'>Get Free Estimate />
+Premium Sports Flooring & Construction
+We Build The
+Ground Work
+For Champions
+Earthfirm Sports Infra engineered athletic arenas. From FIFA-standard turf fields to Olympic track-and-field tracks, we build durable, high-performance sports courts tailored to perfection.
+[10] (239,619)<a class='px-8 py-4 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-center font-bold tracking-wide transition-all shadow-lg hover:border-slate-500' href='#customizer'>Interactive Visualizer />
+[11] (369,619)<a class='px-8 py-4 rounded-full bg-gradient-to-r from-brandGreen to-brandCyan text-black text-center font-bold tracking-wide hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brandGreen/20' href='#estimator'>Calculate Project Cost />
+150
++
+Courts Built
+100
+%
+IAAF/FIFA Compliant
+10
++
+Years Guarantee
+Featured project

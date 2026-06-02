@@ -1,0 +1,10 @@
+# Scratchpad - Earthfirm Sports Infra Website Verification
+
+## Checklist
+- [ ] Open index.html in the browser
+- [ ] Verify sports landing page displays properly
+- [ ] Verify that generated images load correctly
+- [ ] Scroll down to the court color visualizer
+- [ ] Click on color swatches to confirm court SVG updates
+- [ ] Check if the multi-step quote estimator works
+- [ ] Document any rendering issues or bugs
